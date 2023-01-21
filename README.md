@@ -1,3 +1,3 @@
 # target-game
 
-This is a little target game I use in my classroom. I display the targets on the projector and we shoot them with a suction-dart gun.
+This is a simple target game I use in my classroom. I display the target on the projector. We use a suction dart gun to shoot at the targets.
