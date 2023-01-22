@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/btn3.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/btn1.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/btn2.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/btn4.png" type="Texture" id=5]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=6]
+[ext_resource path="res://themes/large_font.tres" type="DynamicFont" id=7]
+
+[node name="MainMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_right = 960.0
+margin_bottom = 540.0
+theme = ExtResource( 6 )
+script = ExtResource( 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -286.0
+margin_top = -344.0
+margin_right = 286.0
+margin_bottom = 511.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+margin_right = 562.0
+margin_bottom = 562.0
+custom_constants/vseparation = 40
+custom_constants/hseparation = 40
+columns = 2
+
+[node name="SceneButton1" type="TextureButton" parent="ScrollContainer/GridContainer"]
+unique_name_in_owner = true
+margin_right = 261.0
+margin_bottom = 261.0
+texture_normal = ExtResource( 3 )
+
+[node name="SceneButton2" type="TextureButton" parent="ScrollContainer/GridContainer"]
+unique_name_in_owner = true
+margin_left = 301.0
+margin_right = 562.0
+margin_bottom = 261.0
+texture_normal = ExtResource( 4 )
+
+[node name="SceneButton3" type="TextureButton" parent="ScrollContainer/GridContainer"]
+unique_name_in_owner = true
+margin_top = 301.0
+margin_right = 261.0
+margin_bottom = 562.0
+texture_normal = ExtResource( 2 )
+
+[node name="SceneButton4" type="TextureButton" parent="ScrollContainer/GridContainer"]
+unique_name_in_owner = true
+margin_left = 301.0
+margin_top = 301.0
+margin_right = 562.0
+margin_bottom = 562.0
+texture_normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_top = 6.0
+margin_right = 512.0
+margin_bottom = 61.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "TARGET GAME"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="EditTeamsButton" type="LinkButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -91.0
+margin_top = 107.0
+margin_right = 124.0
+margin_bottom = 150.0
+custom_colors/font_color_focus = Color( 0.223529, 0.219608, 0.219608, 1 )
+custom_colors/font_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+custom_colors/font_color_hover = Color( 0.282353, 0.694118, 1, 1 )
+text = "SETUP TEAMS"
+underline = 1
+
+[connection signal="pressed" from="EditTeamsButton" to="." method="_on_EditTeamsButton_pressed"]

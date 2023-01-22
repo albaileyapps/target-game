@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Control
+
+
+export var press_scale_x = 1.1
+export var press_scale_y = 1.1
+
+var is_pressed = false
+var touch_down_time = 0
+var touch_down_pos = Vector2(0,0)
+
+var clicks = 0
+
+signal pressed
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	var animation = $AnimationPlayer.get_animation(\"press_down\")
+	var track = animation.find_track(\".:rect_scale\") # or an integer
+	animation.track_set_key_value(0, 1, Vector2(press_scale_x, press_scale_y))
+	
+func press_down():
+	if !is_pressed:
+		$AnimationPlayer.play(\"press_down\")
+		is_pressed = true
+
+func press_up():
+	if is_pressed:
+		$AnimationPlayer.play_backwards(\"press_down\")
+		is_pressed = false
+
+
+func _on_CPButtonBase_gui_input(event):
+#	if !DataManager.get_touch_enabled(): return
+	if event is InputEventScreenTouch and event.pressed:
+		touch_down_time = OS.get_system_time_msecs()
+		touch_down_pos = get_global_mouse_position()
+		press_down()
+	if event is InputEventScreenTouch and !event.pressed:
+		press_up()
+		if get_global_mouse_position().distance_to(touch_down_pos) > 10:
+			return
+		if OS.get_system_time_msecs() - touch_down_time > 500:
+			return
+		emit_signal(\"pressed\")
+
+
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "press_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[node name="ControlBtnBase" type="Control"]
+script = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/press_down = SubResource( 2 )
+
+[connection signal="gui_input" from="." to="." method="_on_CPButtonBase_gui_input"]

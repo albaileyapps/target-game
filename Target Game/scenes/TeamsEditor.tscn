@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://themes/large_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/TeamsEditor.gd" type="Script" id=2]
+[ext_resource path="res://assets/img/btn-close.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/btn-close-pressed.png" type="Texture" id=4]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=5]
+[ext_resource path="res://shaders/panel_blur_shader.tres" type="Material" id=6]
+
+[node name="TeamsEditor" type="Panel"]
+material = ExtResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "SETUP TEAMS"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -600.0
+margin_top = -413.5
+margin_right = 600.0
+margin_bottom = 413.5
+rect_min_size = Vector2( 600, 0 )
+scroll_horizontal_enabled = false
+
+[node name="TeamList" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+margin_right = 1200.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 100.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+
+[node name="ButtonContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -171.0
+margin_top = -75.0
+margin_right = 276.0
+margin_bottom = -15.0
+rect_min_size = Vector2( 0, 60 )
+custom_constants/separation = 10
+
+[node name="AddTeamButton" type="Button" parent="ButtonContainer"]
+margin_right = 116.0
+margin_bottom = 60.0
+text = "Add Team"
+
+[node name="ResetScoresButton" type="Button" parent="ButtonContainer"]
+margin_left = 126.0
+margin_right = 270.0
+margin_bottom = 60.0
+text = "Reset Scores"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="ButtonContainer/AddTeamButton" to="." method="_on_AddTeamButton_pressed"]
+[connection signal="pressed" from="ButtonContainer/ResetScoresButton" to="." method="_on_ResetScoresButton_pressed"]

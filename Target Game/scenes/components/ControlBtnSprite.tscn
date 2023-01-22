@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/components/ControlBtnBase.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends \"res://scenes/components/ControlBtnBase.gd\"
+tool
+export var tex : Texture
+
+func _ready():
+	$TextureRect.texture = tex
+	var size = $TextureRect.texture.get_size()
+#	rect_min_size = size
+	
+#	$TextureRect.rect_position = Vector2(-size.x/2, -size.y/2)
+"
+
+[node name="ControlBtnSprite" instance=ExtResource( 1 )]
+script = SubResource( 1 )
+tex = null
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/TargetSceneBase.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/btn-close.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/btn-close-pressed.png" type="Texture" id=3]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/components/Scoreboard.tscn" type="PackedScene" id=5]
+
+[node name="TargetSceneBase" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 4 )
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 100.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+
+[node name="Scoreboard" parent="CanvasLayer/Control" instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -420.0
+margin_right = 0.0
+margin_bottom = 972.0
+rect_min_size = Vector2( 420, 0 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -424.0
+margin_top = -66.0
+margin_right = -24.0
+margin_bottom = -22.0
+rect_min_size = Vector2( 400, 0 )
+custom_constants/separation = 30
+alignment = 2
+
+[node name="EditButton" type="LinkButton" parent="CanvasLayer/Control/HBoxContainer"]
+margin_left = 276.0
+margin_right = 321.0
+margin_bottom = 44.0
+shortcut_in_tooltip = false
+text = "EDIT"
+underline = 1
+
+[node name="HideButton" type="LinkButton" parent="CanvasLayer/Control/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 351.0
+margin_right = 400.0
+margin_bottom = 44.0
+shortcut_in_tooltip = false
+text = "HIDE"
+underline = 1
+
+[node name="TargetButtonParent" type="Node2D" parent="."]
+position = Vector2( 760, 540 )
+
+[connection signal="pressed" from="CanvasLayer/Control/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/EditButton" to="." method="_on_EditButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/HideButton" to="." method="_on_HideButton_pressed"]

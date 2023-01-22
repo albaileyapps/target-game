@@ -8,14 +8,45 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Team",
+"language": "GDScript",
+"path": "res://resources/team.gd"
+}, {
+"base": "Resource",
+"class": "Teams",
+"language": "GDScript",
+"path": "res://resources/teams.gd"
+} ]
+_global_script_class_icons={
+"Team": "",
+"Teams": ""
+}
+
 [application]
 
 config/name="Target Game"
+run/main_scene="res://main.tscn"
+boot_splash/bg_color=Color( 0.839216, 0.839216, 0.839216, 1 )
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
@@ -23,4 +54,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.94902, 0.929412, 0.972549, 1 )
 environment/default_environment="res://default_env.tres"
