@@ -10,7 +10,6 @@ func _ready():
 	build_list()
 	teams.connect("changed", self, "on_teams_changed")
 
-
 func add_team(p_name):
 	teams.add_team(p_name)
 	
@@ -42,7 +41,6 @@ func remove_team(p_team):
 
 func _on_ExitButton_pressed():
 	emit_signal("exit")
-
 
 func _on_ResetScoresButton_pressed():
 	for team in teams.list:
