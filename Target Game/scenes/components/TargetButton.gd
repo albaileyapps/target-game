@@ -1,11 +1,9 @@
-tool
-extends Node2D
 
-export var press_scale_x = 1.1
-export var press_scale_y = 1.1
-export var texture: Texture
+extends Sprite
+
+export var press_scale_x: float = 1.08
+export var press_scale_y: float = 0.92
 export var score = 10
-export var target_color = Color.white
 
 var is_pressed = false
 var touch_down_time = 0
@@ -19,17 +17,15 @@ signal pressed(p_score)
 func _ready():
 	add_to_group(TARGET_BUTTON_GROUP)
 #	var animation_name = $AnimationPlayer.current_animation # or some other name
+	print(press_scale_x)
 	var animation = $AnimationPlayer.get_animation("press_down")
-	var track = animation.find_track("CPButtonBase:scale") # or an integer
 	animation.track_set_key_value(0, 1, Vector2(press_scale_x, press_scale_y))
-	$Sprite.texture = texture
-	$Sprite.modulate = target_color
 
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch and event.pressed:
 		print("button pressed")
-		if !$Sprite.is_pixel_opaque(get_local_mouse_position()): return
+		if !is_pixel_opaque(get_local_mouse_position()): return
 		touch_down_time = OS.get_system_time_msecs()
 		touch_down_pos = get_viewport().get_mouse_position()
 		press_down()

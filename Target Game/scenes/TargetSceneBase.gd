@@ -33,3 +33,17 @@ func _on_HideButton_pressed():
 	$CanvasLayer/Control/Scoreboard.visible = score_label_group_visible
 	$CanvasLayer/Control/HBoxContainer/EditButton.visible = score_label_group_visible
 	$CanvasLayer/Control/HBoxContainer/HideButton.text = "HIDE" if score_label_group_visible else "SHOW"
+
+func _unhandled_key_input(event):
+	if event.scancode == KEY_UP:
+		$TargetButtonParent.position = Vector2($TargetButtonParent.position.x, $TargetButtonParent.position.y - 5)
+	if event.scancode == KEY_DOWN:
+		$TargetButtonParent.position = Vector2($TargetButtonParent.position.x, $TargetButtonParent.position.y + 5)
+	if event.scancode == KEY_LEFT:
+		$TargetButtonParent.position = Vector2($TargetButtonParent.position.x - 5, $TargetButtonParent.position.y)
+	if event.scancode == KEY_RIGHT:
+		$TargetButtonParent.position = Vector2($TargetButtonParent.position.x + 5, $TargetButtonParent.position.y)
+	if event.scancode == KEY_MINUS or event.scancode == KEY_KP_SUBTRACT:
+		$TargetButtonParent.scale = Vector2($TargetButtonParent.scale.x - 0.05, $TargetButtonParent.scale.y - 0.05)
+	if event.scancode == KEY_EQUAL or event.scancode == KEY_KP_ADD:
+		$TargetButtonParent.scale = Vector2($TargetButtonParent.scale.x + 0.05, $TargetButtonParent.scale.y + 0.05)

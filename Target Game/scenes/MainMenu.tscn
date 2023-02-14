@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/btn3.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/btn1.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/btn2.png" type="Texture" id=4]
-[ext_resource path="res://assets/img/btn4.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/btn-menu-4.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/btn-menu-1-pressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/btn-menu-3-pressed.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/btn-menu-1.png" type="Texture" id=5]
 [ext_resource path="res://themes/main_theme.tres" type="Theme" id=6]
 [ext_resource path="res://themes/large_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/img/btn-menu-2.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/btn-menu-2-pressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/btn-menu-4-pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/btn-menu-3.png" type="Texture" id=11]
 
 [node name="MainMenu" type="Control"]
 anchor_left = 0.5
@@ -25,45 +29,53 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -286.0
+margin_left = -480.0
 margin_top = -344.0
-margin_right = 286.0
+margin_right = 480.0
 margin_bottom = 511.0
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
-margin_right = 562.0
-margin_bottom = 562.0
+margin_right = 848.0
+margin_bottom = 546.0
 custom_constants/vseparation = 40
 custom_constants/hseparation = 40
 columns = 2
 
 [node name="SceneButton1" type="TextureButton" parent="ScrollContainer/GridContainer"]
 unique_name_in_owner = true
-margin_right = 261.0
-margin_bottom = 261.0
-texture_normal = ExtResource( 3 )
+margin_right = 404.0
+margin_bottom = 253.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
 
 [node name="SceneButton2" type="TextureButton" parent="ScrollContainer/GridContainer"]
 unique_name_in_owner = true
-margin_left = 301.0
-margin_right = 562.0
-margin_bottom = 261.0
-texture_normal = ExtResource( 4 )
+margin_left = 444.0
+margin_right = 848.0
+margin_bottom = 253.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 
 [node name="SceneButton3" type="TextureButton" parent="ScrollContainer/GridContainer"]
 unique_name_in_owner = true
-margin_top = 301.0
-margin_right = 261.0
-margin_bottom = 562.0
-texture_normal = ExtResource( 2 )
+margin_top = 293.0
+margin_right = 404.0
+margin_bottom = 546.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 
 [node name="SceneButton4" type="TextureButton" parent="ScrollContainer/GridContainer"]
 unique_name_in_owner = true
-margin_left = 301.0
-margin_top = 301.0
-margin_right = 562.0
-margin_bottom = 562.0
-texture_normal = ExtResource( 5 )
+margin_left = 444.0
+margin_top = 293.0
+margin_right = 848.0
+margin_bottom = 546.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
