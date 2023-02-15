@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/TargetSceneBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/components/TargetButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/img/targets/4-2.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/targets/4-8.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/targets/4-6.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/targets/4-21.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/targets/4-13.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/targets/4-14.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/targets/4-9.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/targets/4-10.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/targets/4-22.png" type="Texture" id=11]
+[ext_resource path="res://assets/img/targets/4-11.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/targets/4-1.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/targets/4-3.png" type="Texture" id=14]
+[ext_resource path="res://assets/img/targets/4-7.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/targets/4-15.png" type="Texture" id=16]
+[ext_resource path="res://assets/img/targets/4-5.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/targets/4-19.png" type="Texture" id=18]
+[ext_resource path="res://assets/img/targets/4-25.png" type="Texture" id=19]
+[ext_resource path="res://assets/img/targets/4-23.png" type="Texture" id=20]
+[ext_resource path="res://assets/img/targets/4-24.png" type="Texture" id=21]
+[ext_resource path="res://assets/img/targets/4-20.png" type="Texture" id=22]
+[ext_resource path="res://assets/img/targets/4-17.png" type="Texture" id=23]
+[ext_resource path="res://assets/img/targets/4-18.png" type="Texture" id=24]
+[ext_resource path="res://assets/img/targets/4-12.png" type="Texture" id=25]
+[ext_resource path="res://assets/img/targets/4-4.png" type="Texture" id=26]
+[ext_resource path="res://assets/img/targets/4-16.png" type="Texture" id=27]
+[ext_resource path="res://assets/img/targets/4-26.png" type="Texture" id=28]
 
 [node name="TargetScene1" instance=ExtResource( 1 )]
 
@@ -8,3 +35,240 @@
 margin_left = -437.0
 margin_top = 16.0
 margin_right = -17.0
+
+[node name="4-1" parent="TargetButtonParent" index="0" instance=ExtResource( 2 )]
+position = Vector2( -806, -400 )
+texture = ExtResource( 13 )
+score = 2
+
+[node name="4-2" parent="TargetButtonParent" index="1" instance=ExtResource( 2 )]
+position = Vector2( -808, 140 )
+texture = ExtResource( 3 )
+score = 1
+
+[node name="4-3" parent="TargetButtonParent" index="2" instance=ExtResource( 2 )]
+position = Vector2( -648, -132 )
+texture = ExtResource( 14 )
+score = 1
+
+[node name="4-4" parent="TargetButtonParent" index="3" instance=ExtResource( 2 )]
+position = Vector2( -960, -132 )
+texture = ExtResource( 26 )
+is_random = true
+min_score = 1
+max_score = 4
+
+[node name="4-5" parent="TargetButtonParent" index="4" instance=ExtResource( 2 )]
+position = Vector2( -656, 412 )
+texture = ExtResource( 17 )
+score = 2
+
+[node name="4-6" parent="TargetButtonParent" index="5" instance=ExtResource( 2 )]
+position = Vector2( -976, 412 )
+texture = ExtResource( 5 )
+is_random = true
+min_score = 1
+max_score = 6
+
+[node name="4-7" parent="TargetButtonParent" index="6" instance=ExtResource( 2 )]
+position = Vector2( -497, -400 )
+texture = ExtResource( 15 )
+is_random = true
+min_score = 1
+max_score = 4
+
+[node name="4-8" parent="TargetButtonParent" index="7" instance=ExtResource( 2 )]
+position = Vector2( -496, 140 )
+texture = ExtResource( 4 )
+is_random = true
+min_score = 1
+max_score = 5
+
+[node name="4-9" parent="TargetButtonParent" index="8" instance=ExtResource( 2 )]
+position = Vector2( -344, -132 )
+texture = ExtResource( 9 )
+is_random = true
+min_score = 1
+max_score = 3
+
+[node name="4-10" parent="TargetButtonParent" index="9" instance=ExtResource( 2 )]
+position = Vector2( -344, 412 )
+texture = ExtResource( 10 )
+is_random = true
+min_score = 2
+max_score = 5
+
+[node name="4-11" parent="TargetButtonParent" index="10" instance=ExtResource( 2 )]
+position = Vector2( -188, -400 )
+texture = ExtResource( 12 )
+score = 1
+
+[node name="4-12" parent="TargetButtonParent" index="11" instance=ExtResource( 2 )]
+position = Vector2( -192, 140 )
+texture = ExtResource( 25 )
+score = 2
+
+[node name="4-13" parent="TargetButtonParent" index="12" instance=ExtResource( 2 )]
+position = Vector2( -32, -124 )
+texture = ExtResource( 7 )
+score = 2
+
+[node name="4-14" parent="TargetButtonParent" index="13" instance=ExtResource( 2 )]
+position = Vector2( -40, 412 )
+texture = ExtResource( 8 )
+score = 1
+
+[node name="4-15" parent="TargetButtonParent" index="14" instance=ExtResource( 2 )]
+position = Vector2( 128, -400 )
+texture = ExtResource( 16 )
+is_random = true
+min_score = 2
+max_score = 5
+
+[node name="4-16" parent="TargetButtonParent" index="15" instance=ExtResource( 2 )]
+position = Vector2( 120, 140 )
+texture = ExtResource( 27 )
+is_random = true
+min_score = -4
+max_score = -1
+
+[node name="4-17" parent="TargetButtonParent" index="16" instance=ExtResource( 2 )]
+position = Vector2( 280, -124 )
+texture = ExtResource( 23 )
+is_random = true
+min_score = -3
+max_score = 2
+
+[node name="4-18" parent="TargetButtonParent" index="17" instance=ExtResource( 2 )]
+position = Vector2( 280, 412 )
+texture = ExtResource( 24 )
+is_random = true
+min_score = 3
+max_score = 5
+
+[node name="4-19" parent="TargetButtonParent" index="18" instance=ExtResource( 2 )]
+position = Vector2( 448, -396 )
+texture = ExtResource( 18 )
+score = 2
+
+[node name="4-20" parent="TargetButtonParent" index="19" instance=ExtResource( 2 )]
+position = Vector2( 440, 140 )
+texture = ExtResource( 22 )
+score = 1
+
+[node name="4-21" parent="TargetButtonParent" index="20" instance=ExtResource( 2 )]
+position = Vector2( 600, -124 )
+texture = ExtResource( 6 )
+score = 1
+
+[node name="4-22" parent="TargetButtonParent" index="21" instance=ExtResource( 2 )]
+position = Vector2( 760, -400 )
+texture = ExtResource( 11 )
+is_random = true
+min_score = -2
+max_score = 2
+
+[node name="4-23" parent="TargetButtonParent" index="22" instance=ExtResource( 2 )]
+position = Vector2( 760, 148 )
+texture = ExtResource( 20 )
+is_random = true
+min_score = 1
+max_score = 5
+
+[node name="4-34" parent="TargetButtonParent" index="23" instance=ExtResource( 2 )]
+position = Vector2( -808, 682.5 )
+texture = ExtResource( 3 )
+score = 1
+
+[node name="4-35" parent="TargetButtonParent" index="24" instance=ExtResource( 2 )]
+position = Vector2( -496, 682.5 )
+texture = ExtResource( 4 )
+is_random = true
+min_score = 1
+max_score = 5
+
+[node name="4-36" parent="TargetButtonParent" index="25" instance=ExtResource( 2 )]
+position = Vector2( -192, 682.5 )
+texture = ExtResource( 25 )
+score = 2
+
+[node name="4-37" parent="TargetButtonParent" index="26" instance=ExtResource( 2 )]
+position = Vector2( 120, 682.5 )
+texture = ExtResource( 27 )
+is_random = true
+min_score = -4
+max_score = -1
+
+[node name="4-38" parent="TargetButtonParent" index="27" instance=ExtResource( 2 )]
+position = Vector2( 440, 682.5 )
+texture = ExtResource( 22 )
+score = 1
+
+[node name="4-39" parent="TargetButtonParent" index="28" instance=ExtResource( 2 )]
+position = Vector2( 760, 690.5 )
+texture = ExtResource( 20 )
+is_random = true
+min_score = 1
+max_score = 5
+
+[node name="4-24" parent="TargetButtonParent" index="29" instance=ExtResource( 2 )]
+position = Vector2( 920, -124 )
+texture = ExtResource( 21 )
+is_random = true
+min_score = 1
+max_score = 4
+
+[node name="4-27" parent="TargetButtonParent" index="30" instance=ExtResource( 2 )]
+position = Vector2( -648, -679.5 )
+texture = ExtResource( 14 )
+score = 1
+
+[node name="4-28" parent="TargetButtonParent" index="31" instance=ExtResource( 2 )]
+position = Vector2( -960, -679.5 )
+texture = ExtResource( 26 )
+is_random = true
+min_score = 1
+max_score = 4
+
+[node name="4-29" parent="TargetButtonParent" index="32" instance=ExtResource( 2 )]
+position = Vector2( -344, -679.5 )
+texture = ExtResource( 9 )
+is_random = true
+min_score = 1
+max_score = 3
+
+[node name="4-30" parent="TargetButtonParent" index="33" instance=ExtResource( 2 )]
+position = Vector2( -32, -671.5 )
+texture = ExtResource( 7 )
+score = 2
+
+[node name="4-31" parent="TargetButtonParent" index="34" instance=ExtResource( 2 )]
+position = Vector2( 280, -671.5 )
+texture = ExtResource( 23 )
+is_random = true
+min_score = -3
+max_score = 2
+
+[node name="4-32" parent="TargetButtonParent" index="35" instance=ExtResource( 2 )]
+position = Vector2( 600, -671.5 )
+texture = ExtResource( 6 )
+score = 1
+
+[node name="4-33" parent="TargetButtonParent" index="36" instance=ExtResource( 2 )]
+position = Vector2( 920, -671.5 )
+texture = ExtResource( 21 )
+is_random = true
+min_score = 1
+max_score = 4
+
+[node name="4-25" parent="TargetButtonParent" index="37" instance=ExtResource( 2 )]
+position = Vector2( 920, 412 )
+texture = ExtResource( 19 )
+is_random = true
+min_score = -3
+max_score = 6
+
+[node name="4-26" parent="TargetButtonParent" index="38" instance=ExtResource( 2 )]
+position = Vector2( 592, 412 )
+texture = ExtResource( 28 )
+score = 2

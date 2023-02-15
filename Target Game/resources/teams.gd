@@ -2,8 +2,8 @@ extends Resource
 class_name Teams
 
 
-var list = [Team.new("Ji Won and Ye Dam", 0),
-Team.new("Seon Woo and Yeon Jae", 0),
+var list = [Team.new("Team 1", 0),
+Team.new("Team 2", 0),
 ]
 
 var undo_actions = []

@@ -58,7 +58,7 @@ align = 1
 valign = 1
 
 [node name="ScoreChangeTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 
 [connection signal="gui_input" from="." to="." method="_on_TeamLabel_gui_input"]
 [connection signal="timeout" from="ScoreChangeTimer" to="." method="_on_ScoreChangeTimer_timeout"]

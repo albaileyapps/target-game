@@ -56,10 +56,12 @@ func _on_TeamLabel_gui_input(event):
 			return
 		if OS.get_system_time_msecs() - touch_down_time > 500:
 			return
+		SoundManager.play(SoundManager.CLICK)
 		emit_signal("team_pressed", self)
 
 
 func _on_ScoreChangeTimer_timeout():
+	SoundManager.play(SoundManager.SCORE)
 	team.score += sign(score_delta)
 	score_delta += sign(-score_delta)
 	if score_delta == 0:

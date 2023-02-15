@@ -19,22 +19,27 @@ func on_target_button_pressed(p_score):
 			label.score_delta += p_score
 	
 	
-func _on_EditTeamsButton_pressed():
-	emit_signal("edit_teams_pressed")
+#func _on_EditTeamsButton_pressed():
+#	SoundManager.play(SoundManager.CLICK)
+#	emit_signal("edit_teams_pressed")
 
 func _on_ExitButton_pressed():
+	SoundManager.play(SoundManager.CLICK)
 	emit_signal("exit_pressed")
 
 func _on_EditButton_pressed():
+	SoundManager.play(SoundManager.CLICK)
 	emit_signal("edit_teams_pressed")
 
 func _on_HideButton_pressed():
+	SoundManager.play(SoundManager.CLICK)
 	score_label_group_visible = !score_label_group_visible
 	$CanvasLayer/Control/Scoreboard.visible = score_label_group_visible
 	$CanvasLayer/Control/HBoxContainer/EditButton.visible = score_label_group_visible
 	$CanvasLayer/Control/HBoxContainer/HideButton.text = "HIDE" if score_label_group_visible else "SHOW"
 
 func _unhandled_key_input(event):
+	if !event.pressed: return
 	if event.scancode == KEY_UP:
 		$TargetButtonParent.position = Vector2($TargetButtonParent.position.x, $TargetButtonParent.position.y - 5)
 	if event.scancode == KEY_DOWN:

@@ -4,6 +4,9 @@ extends Sprite
 export var press_scale_x: float = 1.08
 export var press_scale_y: float = 0.92
 export var score = 10
+export var is_random = false
+export var min_score = 0
+export var max_score = 10
 
 var is_pressed = false
 var touch_down_time = 0
@@ -13,8 +16,11 @@ const TARGET_BUTTON_GROUP = "target_button_group"
 
 signal pressed(p_score)
 
+var rng = RandomNumberGenerator.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng.randomize()
 	add_to_group(TARGET_BUTTON_GROUP)
 #	var animation_name = $AnimationPlayer.current_animation # or some other name
 	print(press_scale_x)
@@ -36,7 +42,15 @@ func _unhandled_input(event):
 		if OS.get_system_time_msecs() - touch_down_time > 400:
 			return
 		get_tree().set_input_as_handled() 
-		emit_signal("pressed", score)
+		SoundManager.play(SoundManager.TARGET)
+		emit_signal("pressed", get_score())
+		
+func get_score() -> int:
+	if is_random:
+		var random_number =  rng.randi_range(min_score, max_score)
+		if random_number == 0: random_number = 1
+		return random_number
+	else: return score
 
 func _input(event):
 #	if !DataManager.get_touch_enabled(): return
